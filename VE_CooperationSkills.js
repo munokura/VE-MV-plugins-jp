@@ -392,6 +392,7 @@ VictorEngine.CooperationSkills = VictorEngine.CooperationSkills || {};
  * ---------------------------------------------------------------------------
  *  v 1.00 - 2016.07.20 > First release.
  * ===========================================================================
+ * v1.0.3 performActionEndWindowBattleLog と存在しない関数をperformActionEnd へ
  */
 
 (function() {
@@ -1390,7 +1391,8 @@ VictorEngine.CooperationSkills = VictorEngine.CooperationSkills || {};
         var object = this;
         BattleManager.allBattleMembers().forEach(function(member) {
             if (member.cooperationLeader(action.item()) === subject) {
-                VictorEngine.CooperationSkills.performActionEndWindowBattleLog.call(object, member, action);
+                // VictorEngine.CooperationSkills.performActionEndWindowBattleLog.call(object, member, action);
+                VictorEngine.CooperationSkills.performActionEnd.call(object, member, action);
             }
         })
     };
